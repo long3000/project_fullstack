@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "nodemon server.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -14,6 +16,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "nodejs": "0.0.0"
+    "node-fetch": "^2.6.0",
+    "nodejs": "0.0.0",
+    "nodemon": "^1.19.1"
   }
 }
