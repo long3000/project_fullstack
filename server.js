@@ -4,10 +4,15 @@ const fetch = require('./actions/fetch');
 
 const app = express();
 
-const URL = 'https://api.randomuser.me';
+app.get('/user', (req, res, next) => {
+    fetch.FetchProfile()
+        .then(userData => {
+            res.send(userData);
+        })
+        .catch(err => {
+            next(err);
+        })
 
-app.get('/user', (req, res) => {
-    return res.send(fetch.FetchProfile());
 });
 
 const PORT = 8080;
