@@ -2,22 +2,23 @@ import React, { Component } from 'react';
 import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl';
 import './App.css';
 import Main from './components/main';
+import { Link } from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
-    <div style={{height: '300px', position: 'relative'}}>
+    <div className="demo-big-content">
       <Layout fixedHeader>
-          <Header title={<span><span style={{ color: '#ddd' }}>Area / </span><strong>The Title</strong></span>}>
+          <Header className='header-color' title="User Profile" scroll>
               <Navigation>
-                  <a href="/">About Me</a>
-                  <a href="/">Edit Profile</a>
+                  <Link to ="/profile">About Me</Link>
+                  <Link to ="/profile_edit">Edit Profile</Link>
               </Navigation>
           </Header>
           <Drawer title="Title">
               <Navigation>
-                  <a href="/">About Me</a>
-                  <a href="/">Edit Profile</a>
+                  <a href="/profile">About Me</a>
+                  <a href="/profile_edit">Edit Profile</a>
               </Navigation>
           </Drawer>
           <Content>

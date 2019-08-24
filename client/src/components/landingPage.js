@@ -5,7 +5,7 @@ class landingPage extends Component {
         return (
             <div>
             <h1>
-                ABOUT ME
+                LANDING PAGE
             </h1>
         </div>
         );
