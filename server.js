@@ -7,7 +7,7 @@ const app = express();
 const URL = 'https://api.randomuser.me';
 
 app.get('/user', (req, res) => {
-    res.send(fetch.FetchProfile());
+    return res.send(fetch.FetchProfile());
 });
 
 const PORT = 8080;
