@@ -1,12 +1,13 @@
 const express = require('express');
-// const fetch = require('node-fetch');
 const fetch = require('./actions/fetch');
+const db = require('./models/db');
 
 const app = express();
 
 app.get('/user', (req, res, next) => {
     fetch.FetchProfile()
         .then(userData => {
+            console.log(userData);
             res.send(userData);
         })
         .catch(err => {
@@ -16,4 +17,12 @@ app.get('/user', (req, res, next) => {
 });
 
 const PORT = 8080;
-app.listen(PORT, () => console.log(`SERVER LISTENING ON PORT ${PORT} .`));
+
+db.connect(function(err) {
+    if (err) {
+        console.error("ERROR unable to connect to MySQL: " + err.stack)
+    }
+    console.log('Connected to MySQL');
+    // Start the app when connection is ready
+    app.listen(PORT, () => console.log(`SERVER LISTENING ON PORT ${PORT} .`));
+});
