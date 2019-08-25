@@ -21,7 +21,8 @@
   height: 250px;
   height: 250px;
   padding-top: 5em;
-  border-radius: 50px;
+  background-position: 50%;
+  border-radius:40% 40% 20% 20%;
 }
 
 .banner-text {
@@ -48,7 +49,10 @@
 .banner-text p {
   color: white;
   font-size: 20px;
-  padding: .3em;
+  padding-top: 5px;
+  margin-top: 4px;
+  margin: 0;
+  /* padding: .2em; */
 }
 
 .social-links {
@@ -62,4 +66,21 @@
   color: white;
   font-size: 3em;
   padding: 8px;
+}
+
+.banner-items {
+  color: white;
+  font-size: 20px;
+  padding-top: 5px;
+  margin-top: 4px;
+  margin: 0;
+  /* padding: .2em; */
+}
+
+.banner-text h2 {
+  text-transform: capitalize;
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  padding-top: 10px;
 }
