@@ -15,9 +15,6 @@ class profile extends Component {
     }
 
     componentDidMount() {
-        // fetch('/user')
-        //     .then(data => data.json())
-        //     .then(userInfo => this.setState({apiResponse: userInfo}))
         this.callAPI();
     }
 
@@ -31,35 +28,48 @@ class profile extends Component {
                         src={info.picture.large}
                         alt='avatar'
                         className='avatar-img'
+                        key='20'
                     />
                     ))}
                     <div className='banner-text'>
                         <div className = 'user-info'>
                             {this.state.apiResponse.map(info => (
-                                <h2>{info.name.first} {info.name.last}</h2>
+                                <h2 key={info.name.first}>{info.name.first} {info.name.last}</h2>
                             ))}
                         </div>
                         <hr />
                         <div className = 'user-contacts'>
-                            {this.state.apiResponse.map(info => (
-                                <div>
-                                    <p className='contact-email'><strong>Email:</strong> {info.email}</p>
-                                    <p className='contact-home'><strong>Home:</strong> {info.phone}</p>
-                                    <p className='contact-cell'><strong>Cell:</strong> {info.cell}</p>
+                            {this.state.apiResponse.map((info, idx) => (
+                                <div className='prop-list' key='9090'>
+                                    <ul>
+                                        <p>CONTACT</p>
+                                        <li id='contact-email' key="1"><strong>Email:</strong> {info.email}</li>
+                                        <li id='contact-home' key="2"><strong>Home:</strong> {info.phone}</li>
+                                        <li id='contact-cell' key="3"><strong>Cell:</strong> {info.cell}</li>
+                                        <p>LOCATION</p>
+                                        <li id='contact-address' key="4"><strong>Address:</strong> {info.location.street}</li>
+                                        <li id='contact-city' key="5"><strong>City:</strong> {info.location.city}</li>
+                                        <li id='contact-state' key="6"><strong>State/Province:</strong> {info.location.state}</li>
+                                        <li id='contact-post' key="7"><strong>Postal Code:</strong> {info.location.postcode}</li>
+                                        <li id='contact-nat' key="8"><strong>Country:</strong> {info.nat}</li>
+                                        <p>PERSONAL</p>
+                                        <li id='contact-gender' key="9"><strong>Gender:</strong> {info.gender}</li>
+                                        <li id='contact-dob' key='9999'><strong>DOB:</strong> {info.dob.date}</li>
+                                    </ul> 
                                 </div>
                             ))}
                         </div>
                         <div className="social-links">
 
                             {/* Email button */}
-                            <a href='http://google.com' rel='noopener noreferrer' target='_blank'>
+                            {/* <a href='http://google.com' rel='noopener noreferrer' target='_blank'>
                                 <i className='fa fa-envelope-square' aria-hidden='true' />
-                            </a>
+                            </a> */}
 
                             {/* LinkedIn button */}
-                            <a href='http://google.com' rel='noopener noreferrer' target='_blank'>
+                            {/* <a href='http://google.com' rel='noopener noreferrer' target='_blank'>
                                 <i className='fa fa-linkedin-square' aria-hidden='true' />
-                            </a>
+                            </a> */}
                         </div>
                     </div>
 

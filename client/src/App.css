@@ -46,12 +46,18 @@
   margin: auto;
 }
 
-.banner-text p {
+.banner-text ul {
+  list-style-type: none;
   color: white;
+  text-align: left;
   font-size: 20px;
   padding-top: 5px;
-  margin-top: 4px;
-  margin: 0;
+  margin: 3px;
+  display:-moz-inline-stack;
+  display:inline-block;
+  zoom:1;
+  *display:inline;
+  
   /* padding: .2em; */
 }
 
@@ -83,4 +89,27 @@
   font-weight: bold;
   color: white;
   padding-top: 10px;
+}
+
+.user-contacts p {
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.user-contacts p {
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0px;
+  padding: 10px;
+  text-align: center;
+}
+
+.user-contacts li {
+  text-transform: capitalize;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px;
 }
