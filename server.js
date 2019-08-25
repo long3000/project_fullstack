@@ -2,23 +2,19 @@ const express = require('express');
 const fetch = require('./actions/fetch');
 const db = require('./models/db');
 const queries = require('./models/createDB');
+const createUser = require('./routes/createUser');
+const fetchUser = require('./routes/fetchUser');
 const colors = require('colors');
 
 const app = express();
 
-app.get('/user', (req, res, next) => {
-    fetch.FetchProfile()
-        .then(userData => {
-            console.log(userData);
-            res.send(userData);
-        })
-        .catch(err => {
-            next(err);
-        })
 
-});
+fetchUser(app);
+createUser(app);
 
 const PORT = 8080;
+// Start the app when connection is ready
+app.listen(PORT, () => console.log(`SERVER LISTENING ON PORT ${PORT} .` .blue));
 
 db.connect(function(err) {
     if (err) {
@@ -32,5 +28,3 @@ db.connect(function(err) {
         console.log("DATABASE Created !" .blue);
     });
 });
-// Start the app when connection is ready
-app.listen(PORT, () => console.log(`SERVER LISTENING ON PORT ${PORT} .` .bgBlue));

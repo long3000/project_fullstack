@@ -1,6 +1,8 @@
 
 
-const createDatabase = "CREATE TABLE IF NOT EXISTS user_profiles (\
+const createDatabase = 
+    "CREATE TABLE IF NOT EXISTS user_profiles (\
+    id INT NOT NULL AUTO_INCREMENT,\
     uuid VARCHAR(255) NOT NULL, \
     gender VARCHAR(255) DEFAULT NULL, \
     firstname VARCHAR(255) NOT NULL,\
@@ -9,9 +11,21 @@ const createDatabase = "CREATE TABLE IF NOT EXISTS user_profiles (\
     email VARCHAR(255) NOT NULL,\
     dob DATE NOT NULL,\
     age INT DEFAULT NULL,\
-    PRIMARY KEY(uuid))";
+    PRIMARY KEY (id))";
+
+const createUser = 
+      "INSERT INTO user_profiles \
+        SET uuid = ? \
+            gender = ? \
+            firstname = ? \
+            lastname = ? \
+            title = ? \
+            email = ? \
+            dob = ? \
+            age = ? \
+      ";
 
 // Create Database for profiles
 module.exports = {
-  createDatabase  
+  createDatabase , createUser
 };
