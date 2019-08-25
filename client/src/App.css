@@ -21,7 +21,7 @@
   height: 250px;
   height: 250px;
   padding-top: 5em;
-  border-radius: 40%;
+  border-radius: 50px;
 }
 
 .banner-text {
@@ -36,6 +36,7 @@
   font-size: 50px;
   font-weight: bold;
   color: white;
+  padding-top: 10px;
 }
 
 .banner-text hr {

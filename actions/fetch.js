@@ -2,8 +2,6 @@ const fetch = require('node-fetch');
 
 const URL = 'https://api.randomuser.me';
 
-let user;
-
 function FetchProfile() {
     return fetch(URL)
             .then( data => data.json())
