@@ -20,7 +20,7 @@ class profile extends Component {
 
     render() {
         return (
-        <div style={{width: '100%', margin: 'auto'}}>
+        <div >
             <Grid className = 'landing-grid'>
                 <Cell col={12}>
                     {this.state.apiResponse.map(info => (
