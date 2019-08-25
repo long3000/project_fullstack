@@ -12,6 +12,10 @@ const app = express();
 fetchUser(app);
 createUser(app);
 
+app.post('/testpost', (req, res) => {
+    console.log(req);
+});
+
 const PORT = 8080;
 // Start the app when connection is ready
 app.listen(PORT, () => console.log(`SERVER LISTENING ON PORT ${PORT} .` .blue));
