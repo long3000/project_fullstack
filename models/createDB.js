@@ -24,8 +24,10 @@ const createUser =
             dob = ? \
             age = ? \
       ";
+const matchCountry = 
+  "SELECT Name FROM data_csv WHERE Code = ? LIMIT 1";      
 
 // Create Database for profiles
 module.exports = {
-  createDatabase , createUser
+  createDatabase , createUser, matchCountry
 };
