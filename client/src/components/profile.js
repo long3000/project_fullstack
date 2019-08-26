@@ -59,6 +59,7 @@ class profile extends Component {
                                 </div>
                             ))}
                         </div>
+                       
                         <div className="social-links">
 
                             {/* Email button */}

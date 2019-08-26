@@ -6,14 +6,23 @@ const createUser = require('./routes/createUser');
 const fetchUser = require('./routes/fetchUser');
 const colors = require('colors');
 
-const app = express();
 
+const app = express();
+app.use(express.json({ limit: '1mb' }));
 
 fetchUser(app);
 createUser(app);
 
-app.post('/testpost', (req, res) => {
-    console.log(req);
+app.post('/testpost', (req, res, next) => {
+    res.setHeader('Content-Type','application/json');
+    
+    // res.send(JSON.stringify({
+    //     param1: req.body.value1 || null,
+    //     param2: req.body.value2 || null,
+    // }));
+
+    console.log('Request posted: '+req.body.value1+' & '+req.body.value2 .green);
+
 });
 
 const PORT = 8080;
@@ -25,10 +34,18 @@ db.connect(function(err) {
         console.error("ERROR unable to connect to MySQL: " + err.stack)
     }
     console.log('Connected to MySQL' .blue);
+    // Create User info DB
     db.query(queries.createDatabase, (err, result) => {
         if (err) {
             console.error(err);
         }
-        console.log("DATABASE Created !" .blue);
+        console.log("USERS DATABASE Created !" .blue);
+    });
+    // Create User locations DB
+    db.query(queries.createDatabaseLocations, (err, result) => {
+        if (err) {
+            console.err(err);
+        }
+        console.log("LOCATIONS DATABASE Created !" .blue);
     });
 });

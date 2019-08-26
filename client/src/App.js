@@ -22,7 +22,7 @@ class App extends Component {
               </Navigation>
           </Drawer>
           <Content>
-            <div className = 'page-content' scroll>
+            <div className = 'page-content'>
               <Main />
               <p>
                 Edit main.js in ./src/components/main.js to tie all routes

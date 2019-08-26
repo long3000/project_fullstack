@@ -107,3 +107,14 @@
   font-weight: bold;
   margin: 5px;
 }
+
+.button-submit {
+  font-size: 3em;
+  padding: 8px;
+}
+
+.button-submit p {
+  font-size: 14px;
+  padding: 8px;
+  color: white;
+}
