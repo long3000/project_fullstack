@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Cell, Button } from 'react-mdl';
+import { Link } from 'react-router-dom';
 
 class submitUser extends Component {
     constructor(props) {
@@ -55,6 +56,9 @@ class submitUser extends Component {
 
 
     render() {
+        function refreshPage() {
+            window.location.reload(false);
+          }
         return (
         <div >
             <Grid className = 'landing-grid'>
@@ -99,22 +103,12 @@ class submitUser extends Component {
                             <form
                                 method="post"
                                 onSubmit={event => this.handleSubmit(event)}>
-                                <p>Submit  <span name="food">{this.state.apiResponse.firstname}</span> ?</p>
                                 <Button raised colored type='submit'>Submit</Button>
                             </form>
+                            <Button raised colored onClick={refreshPage} className='random-but'>Randomize</Button>
+                            
                         </div>
-                        <div className="social-links">
-
-                            {/* Email button */}
-                            {/* <a href='http://google.com' rel='noopener noreferrer' target='_blank'>
-                                <i className='fa fa-envelope-square' aria-hidden='true' />
-                            </a> */}
-
-                            {/* LinkedIn button */}
-                            {/* <a href='http://google.com' rel='noopener noreferrer' target='_blank'>
-                                <i className='fa fa-linkedin-square' aria-hidden='true' />
-                            </a> */}
-                        </div>
+                       
                     </div>
 
                 </Cell>

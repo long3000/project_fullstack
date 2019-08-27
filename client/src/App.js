@@ -11,14 +11,14 @@ class App extends Component {
       <Layout fixedHeader>
           <Header className='header-color' title="User Profile" scroll>
               <Navigation>
-                  <Link to ="/profile">About Me</Link>
-                  <Link to ="/profile_edit">Edit Profile</Link>
+                  <Link to ="/">Homepage</Link>
+                  <Link to ="/submit_user">Add New User</Link>
               </Navigation>
           </Header>
           <Drawer title="Title">
               <Navigation>
-                  <a href="/profile">About Me</a>
-                  <a href="/profile_edit">Edit Profile</a>
+                  <a href="/">Homepage</a>
+                  <a href="/submit_user">Add New User</a>
               </Navigation>
           </Drawer>
           <Content>
