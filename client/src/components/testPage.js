@@ -54,7 +54,7 @@ class testPage extends Component {
     }
 
     componentDidMount() {
-        fetch(`http://localhost:3000/user/${this.props.match.params.uuid}`)
+        fetch(`/user/${this.props.match.params.uuid}`)
             .then((response) => {
                 return response.json();
             })
