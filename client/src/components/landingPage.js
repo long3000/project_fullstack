@@ -42,7 +42,7 @@ class landingPage extends Component {
                             {this.state.apiResponse.map(member =>
                             <tr key={member.id}>
                                 <td>{member.firstname} </td>
-                                <td>{member.lastname}</td>
+                                <td>{member.lastName}</td>
                                 <td>{member.email}</td>
                                 <td>
                                     <Link to={"/profile/"+member.uuid}><Button>PROFILE</Button></Link>
