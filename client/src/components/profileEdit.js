@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Cell, Button } from 'react-mdl';
+import { Link } from 'react-router-dom';
 
 class profileEdit extends Component {
     constructor() {
@@ -97,23 +98,9 @@ class profileEdit extends Component {
                             )}
                         </div>
                         <div className="button-submit">
-                            <form
-                                method="post"
-                                onSubmit={event => this.handleSubmit(event)}>
-                                <Button raised colored type='submit'>EDIT</Button>
-                            </form>
-                        </div>
-                        <div className="social-links">
-
-                            {/* Email button */}
-                            {/* <a href='http://google.com' rel='noopener noreferrer' target='_blank'>
-                                <i className='fa fa-envelope-square' aria-hidden='true' />
-                            </a> */}
-
-                            {/* LinkedIn button */}
-                            {/* <a href='http://google.com' rel='noopener noreferrer' target='_blank'>
-                                <i className='fa fa-linkedin-square' aria-hidden='true' />
-                            </a> */}
+                            
+                               <Link to={'/test_page/'+ this.state.uuid}> <Button raised colored type='submit'>EDIT</Button></Link>
+            
                         </div>
                     </div>
                 </Cell>

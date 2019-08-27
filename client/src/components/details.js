@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Cell, Button } from 'react-mdl';
+import { Link } from 'react-router-dom';
 
 class detailsPage extends Component {
     constructor() {
@@ -91,11 +92,9 @@ componentDidMount() {
                             )}
                         </div>
                         <div className="button-submit">
-                            <form
-                                method="post"
-                                onSubmit={event => this.handleSubmit(event)}>
-                                <Button raised colored type='submit'>EDIT</Button>
-                            </form>
+                           
+                        <Link to={'/test_page/'+ this.state.uuid}> <Button raised colored type='submit'>EDIT</Button></Link>
+
                         </div>
                         <div className="social-links">
 

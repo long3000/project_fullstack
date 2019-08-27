@@ -60,18 +60,7 @@ class profile extends Component {
                             ))}
                         </div>
                        
-                        <div className="social-links">
 
-                            {/* Email button */}
-                            {/* <a href='http://google.com' rel='noopener noreferrer' target='_blank'>
-                                <i className='fa fa-envelope-square' aria-hidden='true' />
-                            </a> */}
-
-                            {/* LinkedIn button */}
-                            {/* <a href='http://google.com' rel='noopener noreferrer' target='_blank'>
-                                <i className='fa fa-linkedin-square' aria-hidden='true' />
-                            </a> */}
-                        </div>
                     </div>
 
                 </Cell>
