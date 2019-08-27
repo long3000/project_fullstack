@@ -40,10 +40,17 @@ const createUser =
 const matchCountry = 
   "SELECT Name FROM data_csv WHERE Code = ? LIMIT 1";      
 
+const findUser = 
+  "SELECT a.uuid AS uuid,gender,firstname,lastname,title,\
+  email,dob,picture,street,city,state,postal,country,\
+  homephone,cellphone FROM user_profiles a LEFT JOIN user_locations b \
+  ON a.uuid = b.uuid WHERE a.uuid =? GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15";
+
 // Create Database for profiles
 module.exports = {
   createDatabase,
   createDatabaseLocations,
   createUser, 
-  matchCountry
+  matchCountry,
+  findUser
 };

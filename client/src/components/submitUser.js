@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Cell, Button } from 'react-mdl';
 
-class profile extends Component {
+class submitUser extends Component {
     constructor(props) {
         super(props);
         this.state = { apiResponse: []};
@@ -124,4 +124,4 @@ class profile extends Component {
     }
 }
 
-export default profile;
+export default submitUser;

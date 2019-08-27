@@ -6,15 +6,21 @@ import landingPage from './landingPage';
 import profile from './profile';
 import profileEdit from './profileEdit';
 import submitUser from './submitUser';
+import testPage from './testPage';
+import detailsPage from './details';
+import userList from './landingPage';
 
 const Main = () => {
     return (
         <Switch>
-        <Route exact path = "/" component={landingPage} />
-        <Route path = "/profile" component={profile} />
-        <Route path = "/profile_edit" component={profileEdit} />
-        <Route path = "/submit_user" component={submitUser} />
-    </Switch>
+            <Route exact path = "/" component={landingPage} />
+            <Route exact path = "/profile" component={profile} />
+            <Route exact path = "/profile/:uuid/edit" component={profileEdit} />
+            <Route exact path = "/profile/:uuid" component={detailsPage} />
+            <Route path = "/users" component={userList} />
+            <Route path = "/submit_user" component={submitUser} />
+            <Route path = "/test_page/:uuid" component={testPage} />
+        </Switch>
     )
 }
 

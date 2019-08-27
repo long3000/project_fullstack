@@ -4,22 +4,25 @@ const db = require('./models/db');
 const queries = require('./models/createDB');
 const createUser = require('./routes/createUser');
 const fetchUser = require('./routes/fetchUser');
+const updateUser = require('./routes/updateUser');
+const randomUser = require('./routes/randomUser');
+const userList = require('./routes/userList');
 const colors = require('colors');
+const sgMail = require('@sendgrid/mail');
 
 
 const app = express();
 app.use(express.json({ limit: '1mb' }));
 
+userList(app);
+randomUser(app);
+updateUser(app);
 fetchUser(app);
 createUser(app);
 
 app.post('/testpost', (req, res, next) => {
     res.setHeader('Content-Type','application/json');
-    
-    // res.send(JSON.stringify({
-    //     param1: req.body.value1 || null,
-    //     param2: req.body.value2 || null,
-    // }));
+
 
     console.log('Request posted: '+req.body.value1+' & '+req.body.value2 .green);
 

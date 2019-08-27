@@ -24,9 +24,6 @@ class App extends Component {
           <Content>
             <div className = 'page-content'>
               <Main />
-              <p>
-                Edit main.js in ./src/components/main.js to tie all routes
-              </p>
             </div>
           </Content>
       </Layout>
