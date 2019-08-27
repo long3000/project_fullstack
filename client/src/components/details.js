@@ -44,7 +44,7 @@ componentDidMount() {
                 street: results.street,
                 city: results.city,
                 state: results.state,
-                postcode: results.postcode,
+                postcode: results.postal,
                 country: results.country,
                 picture: results.picture
             })

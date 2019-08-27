@@ -50,7 +50,7 @@ class profile extends Component {
                                         <li id='contact-address' key="4"><strong>Address:</strong> {info.location.street}</li>
                                         <li id='contact-city' key="5"><strong>City:</strong> {info.location.city}</li>
                                         <li id='contact-state' key="6"><strong>State/Province:</strong> {info.location.state}</li>
-                                        <li id='contact-post' key="7"><strong>Postal Code:</strong> {info.location.postcode}</li>
+                                        <li id='contact-post' key="7"><strong>Postal Code:</strong> {info.location.postal}</li>
                                         <li id='contact-nat' key="8"><strong>Country:</strong> {info.nat}</li>
                                         <p>PERSONAL</p>
                                         <li id='contact-gender' key="9"><strong>Gender:</strong> {info.gender}</li>
