@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Cell } from 'react-mdl';
-import { Table, Button } from 'reactstrap';
+import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 // import ModalForm from 'mdbootstrap';
@@ -30,14 +30,6 @@ class landingPage extends Component {
                     <div className='banner-text'>
                         <div className = 'user-info'>
                         <table className="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>First Name</th>
-                                    <th>Last Name</th>
-                                    <th>Email</th>
-                                    
-                                </tr>
-                            </thead>
                             <tbody>
                             {this.state.apiResponse.map(member =>
                             <tr key={member.id}>
@@ -55,6 +47,31 @@ class landingPage extends Component {
                             </tbody>
                         </table>
                         </div>
+                        {/* <div class="container">
+                        <table class="table table-fixed">
+                            <thead>
+                            <tr>
+                                <th class="col-xs-3">First Name</th>
+                                <th class="col-xs-3">Last Name</th>
+                                <th class="col-xs-6">E-mail</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {this.state.apiResponse.map(member =>
+                            <tr>
+                                <td class="col-xs-3">{member.firstname}</td>
+                                <td class="col-xs-3">{member.lastName}</td>
+                                <td class="col-xs-6">{member.email}</td>
+                                <td>
+                                    <Link to={"/profile/"+member.uuid}><Button>PROFILE</Button></Link>
+                                </td>
+                                <td>
+                                    <Link to={"/test_page/"+member.uuid+"/edit"}><Button>EDIT</Button></Link>
+                                </td>
+                            </tr>
+                            )}</tbody>
+                        </table>
+                        </div> */}
 
                     </div>
 

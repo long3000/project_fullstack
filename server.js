@@ -28,7 +28,7 @@ app.post('/testpost', (req, res, next) => {
 
 });
 
-const PORT = 8080;
+const PORT = 5000;
 // Start the app when connection is ready
 app.listen(PORT, () => console.log(`SERVER LISTENING ON PORT ${PORT} .` .blue));
 

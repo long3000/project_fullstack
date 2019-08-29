@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Cell, Button } from 'react-mdl';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 class submitUser extends Component {
     constructor(props) {

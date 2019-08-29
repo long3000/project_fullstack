@@ -205,7 +205,11 @@ input {
   font-size: 17px;
 }
 
-.user-info tr {
+.user-info {
+  display: block;
+  /* margin: auto; */
+  border-radius: 10px;
+  /* justify-content: center; */
 }
 .user-info td {
   color: white;
@@ -218,3 +222,25 @@ input {
   padding-bottom: 5px;
   margin-top: 20px;
 }
+
+.table-fixed{
+  width: 100%;
+  margin: auto;
+  background-color: #f3f3f3;
+}
+.table-fixed tbody {
+    height:200px;
+    overflow-y:auto;
+    width: 100%;
+}
+/* .table-fixed thead,tbody,tr,td,th{
+    display:block;
+} */
+.table-fixed td{
+  float:left;
+}
+ 
+.table-fixed th{
+  float:left;
+}
+

@@ -63,11 +63,10 @@ componentDidMount() {
                         className='avatar-img'
                         key='20'
                     />
-                    )}
                     <div className='banner-text'>
                         <div className = 'user-info'>
                             <h2 key={this.state.firstname}>{this.state.firstname} {this.state.lastname}</h2>
-                            )}
+                            
                         </div>
                         <hr />
                         <div className = 'user-contacts'>
@@ -97,16 +96,6 @@ componentDidMount() {
 
                         </div>
                         <div className="social-links">
-
-                            {/* Email button */}
-                            {/* <a href='http://google.com' rel='noopener noreferrer' target='_blank'>
-                                <i className='fa fa-envelope-square' aria-hidden='true' />
-                            </a> */}
-
-                            {/* LinkedIn button */}
-                            {/* <a href='http://google.com' rel='noopener noreferrer' target='_blank'>
-                                <i className='fa fa-linkedin-square' aria-hidden='true' />
-                            </a> */}
                         </div>
                     </div>
 
