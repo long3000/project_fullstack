@@ -10,12 +10,14 @@ class submitUser extends Component {
     }
 
     callAPI() {
-        fetch('/user')
+        fetch('http://localhost:5000/randomuser')
             .then(res => res.json())
             .then((data) => {
                 this.setState({
                     apiResponse: data.map(info =>({
                         uuid : info.login.uuid,
+                        username: info.login.username,
+                        password: info.login.password,
                         gender : info.gender,
                         firstname : info.name.first,
                         lastname : info.name.last,
@@ -30,6 +32,7 @@ class submitUser extends Component {
                         postcode: info.location.postcode,
                         country: info.nat,
                         picture: info.picture.large
+                        
                     }))
                 })
             })
@@ -42,7 +45,7 @@ class submitUser extends Component {
 
     handleSubmit(event){
         event.preventDefault()
-        fetch('/user/new', {
+        fetch('http://localhost:5000/user/new', {
           method: 'POST',  
           body: JSON.stringify(this.state.apiResponse),  
           headers:{
@@ -52,6 +55,7 @@ class submitUser extends Component {
       .then(response => console.log('Success:', JSON.stringify(response)))
       .catch(error => console.error('Error:', error));
       alert('Added this user!');
+      this.callAPI();
     }
 
 
@@ -93,7 +97,7 @@ class submitUser extends Component {
                                         <li id='contact-state' key="6"><strong>State/Province:</strong> {info.state}</li>
                                         <li id='contact-post' key="7"><strong>Postal Code:</strong> {info.postcode}</li>
                                         <li id='contact-nat' key="8"><strong>Country:</strong> {info.country}</li>
-                                        <p>PERSONAL</p>
+                                        <p>PERSONAL INFO</p>
                                         <li id='contact-gender' key="9"><strong>Gender:</strong> {info.gender}</li>
                                         <li id='contact-dob' key='9999'><strong>DOB:</strong> {info.dob}</li>
                                     </ul> 

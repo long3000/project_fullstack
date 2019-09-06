@@ -1,7 +1,7 @@
 const sgMail = require('@sendgrid/mail');
-const keys = require('../config/keys');
+// const keys = require('../config/keys');
 
-sgMail.setApiKey(keys.sgmail);
+sgMail.setApiKey('1234567890');
 
 function updateInfoEmail(email, name){
     const firstName = name.charAt(0).toUpperCase() + name.substring(1);

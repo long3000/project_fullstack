@@ -1,10 +1,11 @@
 const fetch = require('../actions/fetch');
 const colors = require('colors');
+const cors = require('cors');
 const queries = require('../models/createDB');
 const connection = require('../models/db');
 
 module.exports = app => {
-    app.post('/user/new', (req, res) => {
+    app.post('/user/new',cors(),(req, res) => {
         var dupCount = 0;
         const jsonBlob = req.body;
         const pushData = jsonBlob.map(info=>({
@@ -42,7 +43,7 @@ module.exports = app => {
                 if(err) {
                     console.error(err);
                     }
-                console.log("ADDED USER !" .green);
+                // console.log("ADDED USER !" .green);
             
                 }
             );
@@ -60,9 +61,22 @@ module.exports = app => {
                 if(err) {
                     console.error(err);
                     }
-                console.log("ADDED LOCATIONS !" .green);
+                // console.log("ADDED LOCATIONS !" .green);
                 }
             );
+            connection.query("INSERT INTO user_logins SET ?", jsonBlob.map(info=>({
+                uuid: info.uuid,
+                username: info.username,
+                password: info.password
+                })
+            ), (err,result) => {
+                if(err) {
+                    console.error(err);
+                    }
+                // console.log("ADDED LOGINS !" .green);
+                }
+            );
+            console.log("ADDED USER !" .green);
         }
     }
 )};

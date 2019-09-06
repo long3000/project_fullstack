@@ -27,6 +27,14 @@ const createDatabaseLocations =
     cellphone VARCHAR(50) DEFAULT NULL,\
     PRIMARY KEY (id))";
 
+const createDatabaseLogin =
+    "CREATE TABLE IF NOT EXISTS user_logins (\
+      id INT NOT NULL AUTO_INCREMENT,\
+      uuid VARCHAR(255) NOT NULL, \
+      username VARCHAR(50) NOT NULL, \
+      password VARCHAR(255) NOT NULL, \
+      PRIMARY KEY (id))";
+
 const createUser = 
       "INSERT INTO user_profiles \
         SET uuid = ? \
@@ -46,11 +54,20 @@ const findUser =
   homephone,cellphone FROM user_profiles a LEFT JOIN user_locations b \
   ON a.uuid = b.uuid WHERE a.uuid =? GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15";
 
+const finderUserSecure = 
+"SELECT a.uuid AS uuid,gender,firstname,lastname,title,\
+  email,dob,picture,street,city,state,postal,country,\
+  homephone,cellphone FROM user_profiles a LEFT JOIN user_locations b \
+  ON a.uuid = b.uuid WHERE a.username = ? AND a.password = ?\
+  GROUP BY 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15";
+
 // Create Database for profiles
 module.exports = {
   createDatabase,
   createDatabaseLocations,
+  createDatabaseLogin,
   createUser, 
   matchCountry,
-  findUser
+  findUser,
+  finderUserSecure
 };

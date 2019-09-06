@@ -1,10 +1,11 @@
 const connection = require('../models/db');
+const cors = require('cors');
 
 module.exports = app => {
-    app.get('/users', (req, res, next) => {
-        connection.query('SELECT uuid,gender,firstname,\
+    app.get('/users', cors(), (req, res, next) => {
+        connection.query('SELECT id,uuid,gender,firstname,\
         lastName,title,email,dob,picture FROM user_profiles\
-        GROUP BY 1,2,3,4,5,6,7,8;', (error, results) => {
+        ', (error, results) => {
             if(error) {
                 next(error);
             }

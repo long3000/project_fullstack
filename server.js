@@ -5,6 +5,7 @@ const queries = require('./models/createDB');
 const createUser = require('./routes/createUser');
 const fetchUser = require('./routes/fetchUser');
 const updateUser = require('./routes/updateUser');
+const deleteUser = require('./routes/deleteUser');
 const randomUser = require('./routes/randomUser');
 const userList = require('./routes/userList');
 const colors = require('colors');
@@ -19,6 +20,7 @@ randomUser(app);
 updateUser(app);
 fetchUser(app);
 createUser(app);
+deleteUser(app);
 
 app.post('/testpost', (req, res, next) => {
     res.setHeader('Content-Type','application/json');
@@ -47,8 +49,15 @@ db.connect(function(err) {
     // Create User locations DB
     db.query(queries.createDatabaseLocations, (err, result) => {
         if (err) {
-            console.err(err);
+            console.error(err);
         }
         console.log("LOCATIONS DATABASE Created !" .blue);
+    });
+    // Create User Logins DB
+    db.query(queries.createDatabaseLogin, (err, result) => {
+        if (err) {
+            console.error(err);
+        }
+        console.log("LOGINS DATABASE Created !" .blue);
     });
 });
